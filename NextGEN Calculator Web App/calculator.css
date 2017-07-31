@@ -1,0 +1,219 @@
+body {
+    font-family: "Times New Roman", Sans-Serif;
+}
+
+#calculatorContact {
+	background-color: white
+}
+#collapseCalc {
+    width: 100px auto !important;
+    height: auto;
+}
+
+.ui-block-a {
+    margin: 1px auto;
+    padding: 1px auto;
+    float: none;
+    max-width: 250px;
+}
+
+.ui-block-a a {
+    width: 7px !important;
+    text-align: center !important;
+    background-color: orangered !important;
+    color: white !important;
+}
+
+#calcWrapper {
+    background-color: white;
+    border-radius: 10px;
+    max-width: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto;
+    border: 0.5px solid orangered;
+}
+
+
+#calcWrapper button {
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 21%;
+    margin: 0 auto;
+    margin-bottom: 0.5%;
+    display: inline-block;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: none;
+
+}
+
+#calcWrapper button:tap{
+    border: 1px solid orangered;
+}
+
+.screen {
+    color: black !important;
+    border-width: medium !important;
+    border: 1px solid orangered !important;
+    width: 92%;
+    text-align: left;
+    overflow: hidden;
+    margin: 4%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#screen {
+    background: white;
+    color: black;
+}
+.screen ul {
+    display: inline-block;
+    list-style: none;
+    margin: 2px;
+}
+
+.screen .values input {
+    display: block;
+}
+
+.screen .values input[type="text"] {
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    pointer-events: none;
+}
+
+.screen .values input[type="number"] {
+    display: inline-block;
+    width: 85%;
+    box-sizing: border-box;
+    padding: 3px;
+    border: none;
+    border-bottom: solid 1px #ccc;
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.screen .result {
+    display: block;
+}
+
+.screen .values {
+    display: block;
+    box-sizing: border-box;
+    padding: 5px;
+    max-height: 67px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.screen .result {
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.ui-block-a {
+    margin: 1px auto;
+    padding: 1px auto;
+    float: none;
+    max-width: 100%;
+    
+}
+
+#orientation {
+    background: darkorange;
+    padding: 20px;
+    margin: 10px auto;
+    left: 0;
+    right: 0;
+    border: 5px solid darkorange;
+    color: white;
+    font-family: "Times New Roman", sans-serif;
+}
+
+.collapseBtn {
+    background-color: darkorange !important;
+    border: 1px solid orangered;
+    margin: 0 auto;
+    text-align:center;
+    float: none;
+    position: relative;
+    box-shadow: none !important;
+}
+
+form {
+    background: white;
+    border-radius: 5px;
+    border: 2px solid orangered;
+    font-family: "Times New Roman", sans-serif;
+    font-weight: 100;
+    margin: 10px auto;
+    padding: 10px;
+    color: black;
+    font-weight: 200;
+}
+
+
+form input {
+    max-width: 100%;
+    color: white;
+}
+
+*::-webkit-input-placeholder {
+    color: white;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: white;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: white;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: white;
+}
+fieldset {
+    min-width: 42% !important;
+}
+fieldset label {
+    /* float: left; */
+    /* width: 20%; */
+    /* margin: .5em 2% 0 0; */
+    float: left !important;
+    width: 60% !important;
+    padding: 10px;
+    left: 0;
+}
+
+form p {
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 10px white;
+    padding: 2px;
+    border: 1px solid orangered;
+}
+
+fieldset option {
+    background: white;
+	font-family: "Times New Roman", sans-serif;
+    font-size: 14px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+footer {
+    font-size: 10px !important;
+}
+
+

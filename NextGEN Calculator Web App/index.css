@@ -1,0 +1,28 @@
+#home {
+    background: white !important;
+
+    font-family: "Times New Roman", sans-serif;
+    
+}
+
+#popupWelcome {
+	padding: 50px;
+    box-shadow: 50px darkorange;
+    text-align: center;
+    font-size: 15px;
+}
+
+.ccBtn {
+	background-color: darkorange !important;
+    border-color: orangered !important;   
+}
+
+.instructionsBtn {
+    background-color: darkorange !important;
+    border-color: orangered !important;
+}
+
+.instructionsBtn p {
+    border-radius: 6px;
+    color:#ffffff !important;
+}

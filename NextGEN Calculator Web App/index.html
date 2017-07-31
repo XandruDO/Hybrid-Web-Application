@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- this meta tag allows android phones to create a shortcut and open this web app as if it was a native app (well, by the looks of it anyway) -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel=stylesheet type="text/css" href="calculator.css">
+
+    <title>ADO Calculator</title>
+</head>
+
+<body>
+    <div id="home" data-role="page" data-overlay-theme="a" data-theme="b">
+        <div data-role="header">
+            <h1>Home</h1>
+            <a href="#calculatorContact" class="ui-btn-right" data-icon="arrow-r" data-iconpos="right" style="float:right;" data-transition="slide">Calculator
+            
+        </a>
+        </div>
+
+        <div class="ccBtn" data-role="collapsible" data-role="button" data-icon="info" style="text-align: center;" data-overlay-theme="b" data-theme="b">
+            <h1>Creative Commons License</h1>
+            <p>This Calculator Web App was created by Alexandru Daniel Opre and licensed under a CC BY-ND License. This license allows for redistribution, commercial and non-commercial, as long as it is passed along unchanged and in whole, with credit to its creator. </p>
+        </div>
+        <div class="instructionsBtn" data-role="collapsible" data-role="button" data-icon="info" style="text-align: center;" data-overlay-theme="b" data-theme="b">
+            <h1>Instructions</h1>
+            <p>This is a simple next generation Calculator Application with a minimalist design for on the go quick and simple calculations.<br><br> One of its key features is that you can scroll up and down the values you have entered to both double check them as well as be able to change them, in case you might have entered the wrong number in the process.<br><br> As well as the Calculator itself, the second page (as mentioned, top right corner button to go to the page), the second page offers a way to contact its creator, Alexandru D. Opre, for any complaints, suggestions or anything else you can think of related to the app. <br><br> Go ahead! Push that button on the top right corner of the app and lets do some calculations! <br><br> Thank you for using this NextGEN Calculator App!
+                <br>
+            </p>
+        </div>
+        <div data-role="popup" id="popupWelcome" data-overlay-theme="a" data-theme="b" data-history="false">
+            Welcome to Alexandru's NextGEN Calculator Web App!
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h1>&copy Alexandru Opre 2017</h1>
+        </div>
+        <script>
+            var OnlyOnce = false;
+            $(document).on("pageshow", "#home", function() {
+                if (!OnlyOnce) {
+                    $('#popupWelcome').popup('open');
+                    OnlyOnce = true;
+                }
+            });
+        </script>
+    </div>
+
+    <div id="calculatorContact" data-role="page" style="text-align:center; float:center;" data-overlay-theme="b" data-theme="b">
+
+        <div data-role="header">
+
+            <h1>Calculator</h1>
+            <a href="#home" class="ui-btn-left" data-icon="arrow-l" data-transition="slide" data-direction="reverse">
+            Home
+        </a>
+        </div>
+        <br>
+        <div data-role="collapsible" data-role="button" style="text-align:center;" data-iconpos="left">
+            <h1>Calculator</h1>
+            <div data-role="main" data-role="ui-content" style="text-align:center;">
+                <div id="calcWrapper" data-role="center-wrapper" data-type="horizontal" style="text-align:center;">
+                    <div class="ui-grid-a ui-block-a">
+                        <input type="hidden" id="currentInput" value="" />
+                        <input type="hidden" id="result" value="0" />
+
+                        <div class="screen">
+                            <div class="values">
+                                <input type="hidden" type="text" value="+" />
+                            </div>
+                            <div class="result">Total: <span>0</span></div>
+                        </div>
+                        <input id="screen" value="" style='text-align:right' disabled="disabled">
+                    </div>
+
+                    <div class="ui-grid-b ui-block-a" style='text-align:center;'>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="CE">CE</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="C">C</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="back">⌫</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all operators operand" id="divide" value="/">/</button>
+                    </div>
+
+                    <div class="ui-grid-c ui-block-a" style='text-align:center'>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="7">7</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="8">8</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="9">9</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all operators operand" value="x">x</button>
+                    </div>
+
+                    <div class="ui-grid-d ui-block-a" style='text-align:center'>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="4">4</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="5">5</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="6">6</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all operators operand" value="-">-</button>
+                    </div>
+
+                    <div class="ui-grid-e ui-block-a" style='text-align:center'>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="1">1</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="2">2</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="3">3</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all operators operand" value="+">+</button>
+                    </div>
+
+                    <div class="ui-grid-f ui-block-a" style='text-align:center'>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="negative">+-</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value="0">0</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all" value=".">.</button>
+                        <button type="button" class="ui-btn ui-btn-inline ui-corner-all operators operand" value="=">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="popup" id="orientation" data-overlay-theme="b" data-theme="a">Orientation has changed</div>
+
+        <div data-role="collapsible" data-role="button" style="text-align:center;" data-iconpos="left">
+            <h2>Contact Form</h2>
+            <p data-overlay-theme="b" data-theme="b">Disclaimer: All data given through this contact form is kept strictly confidential and private under all Data Protection laws.</p>
+            <form id="form" action="" method="post">
+                <fieldset class="ui-field-contain" style="text-align:center; max-width:150px;" required>
+                    <label for="reason">Select contact reason:</label>
+                    <select name="reason" id="reason">
+                        <option value="suggestion">Suggestion</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </fieldset>
+                <label for="fname">First Name(s):</label>
+                <input type="text" id="fname" placeholder="First Name..." autofocus required>
+                <label for="lname">Last Name Name:</label>
+                <input type="text" id="lname" placeholder="Last Name..." required>
+                <label for="contactNumber">Contact Number:</label>
+                <input type="tel" pattern="[0-9]{5}-[0-9]{3}-[0-9]{3}" placeholder="XXXX-XXX-XXX..." id="phoneNo" required>
+                <label for="email">E-mail address:</label>
+                <input type="email" id="email" placeholder="example@something.com" required>
+                <label for="textarea">Message:</label>
+                <textarea type="text" min="50" id="message" placeholder="Type your message here..." required></textarea>
+                <input type="submit" id="submit" value="Submit">
+                <input type="reset" id="reset" value="Reset">
+                <p id="formFeedback"></p>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>&copy Alexandru Opre 2017</h1>
+        </div>
+
+    </div>
+    
+    <script type="text/javascript" src="calculatorJS.js"></script>
+    <script type=text/javascript src="contact.js"></script>
+    <!-- Below is a script just to show how it would work to alert the user about the orientation that just changed -->
+    <script>
+        $(document).ready(function(e) {
+            $(window).on("orientationchange", function() {
+                $('#orientation').on('orientationchange', $('#orientation').popup('open'));
+            });
+        });
+    </script>
+
+</body>
+
+</html>
